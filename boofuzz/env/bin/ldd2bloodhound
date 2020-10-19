@@ -1,0 +1,3 @@
+#!/Users/yongdaek/GeorgiaTech/SNU/src/boofuzz/env/bin/python3
+from ldapdomaindump import convert
+convert.ldd2bloodhound()
