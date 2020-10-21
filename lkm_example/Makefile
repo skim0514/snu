@@ -1,9 +1,9 @@
-CC=afl-gcc
+CC=gcc
 CFLAGS=-I.
 
 
 read: 
-	$(CC) -o read_dma read_dma.o
+	$(CC) -o  read_dma read_dma.o
 
 
 write: 

@@ -7,7 +7,7 @@
 #include <string.h>
 #include <errno.h>
 #include <fcntl.h>
-#define DEVICE_NODE "/dev/sda1"
+#define DEVICE_NODE "/dev/sda"
 #define INQ_REPLY_LEN 96
 #define INQ_CMD_CODE 0x12
 #define INQ_CMD_LEN 6
@@ -60,9 +60,9 @@ int main(int argc, char *argv[])
 	    	break;
 	    buf[j] = c;
   	}
-	unsigned char input1 = buf[0];
-	unsigned char input2 = buf[1];
-	unsigned char input3 = buf[2];
+	unsigned char input1 = 0x85;
+	unsigned char input2 = 0x0D;
+	unsigned char input3 = 0x2E;
 	unsigned char cmd_blk[CMD_LEN] = {input1, input2, input3, 0, 0, (1>>8), 
 		1, (lba>>8), lba, (lba>>24), (lba>>16), 0, 0, 0x40, 0x25, 0};
 	if ((device_ = open(DEVICE_NODE, O_RDWR)) < 0) {
